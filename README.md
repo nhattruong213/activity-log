@@ -1,30 +1,20 @@
 ### Cài đặt
-1. Copy source của package vào path: *packages\nnt\activity-log*
-2. Thêm package vào *composer.json*
 
-        "prefer-stable": true,
-        "repositories": [
-                {
-                    "type": "path",
-                    "url": "./packages/nnt/activity-log/"
-                }
-            ]
-
-3. Chạy lệnh sau để cài đặt package từ đường dẫn local:
+1. Chạy lệnh sau để cài đặt package từ đường dẫn local:
 
         composer require nnt/activity-log
 
-4. Publish cấu hình
+2. Publish cấu hình
 
         php artisan vendor:publish --provider="NNT\ActivityLog\ActivityLogServiceProvider" --tag="config"
 
         php artisan config:cache
 
-5. Publish migration:
+3. Publish migration:
 
         php artisan vendor:publish --provider="NNT\ActivityLog\ActivityLogServiceProvider" --tag="migrations"
 
-6. Chạy *php artisan migrate* để tạo bảng activity_logs trong DB
+4. Chạy *php artisan migrate* để tạo bảng activity_logs trong DB
 
 ### Hướng dẫn dùng
 
