@@ -1,0 +1,30 @@
+{
+    "name": "nnt/activity-log",
+    "description": "Package này cung cấp các chức năng dễ sử dụng để ghi nhật ký hoạt động của người dùng ứng dụng của bạn.",
+    "authors": [
+        {
+            "name": "Nguyen Nhat Truong",
+            "email": "nguyennhattruong11223344@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "NNT\\ActivityLog\\": "src/"
+        },
+        "classmap": [
+            "src"
+        ],
+        "files": [
+            "src/helpers.php"
+        ]
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "NNT\\ActivityLog\\ActivityLogServiceProvider"
+            ]
+        }
+    }
+}

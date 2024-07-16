@@ -1,0 +1,35 @@
+<?php
+
+use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
+
+class CreateActivityLogTable extends Migration
+{
+    /**
+     * Run the migrations.
+     */
+    public function up()
+    {
+        Schema::create(config('activity-log.table_name'), function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->string('log_type')->nullable();
+            $table->text('description');
+            $table->integer('causer_id')->nullable();
+            $table->string('causer_type', 100)->nullable();
+            $table->integer('subject_id')->nullable();
+            $table->string('subject_type', 100)->nullable();
+            $table->longText('before_value')->nullable();
+            $table->longText('after_value')->nullable();
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     */
+    public function down()
+    {
+        Schema::connection(config('activity-log.database_connection'))->dropIfExists(config('activity-log.table_name'));
+    }
+}
