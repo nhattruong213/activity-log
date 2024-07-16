@@ -95,7 +95,7 @@ Package này có thể sử dụng để autolog model event
 
 Để sử dụng thì trong model thêm trait `LogsActivity`
 ```php
-use ES\ActivityLog\Traits\LogsActivity;
+use NNT\ActivityLog\Traits\LogsActivity;
 
 class NewsItem extends Model
 {
